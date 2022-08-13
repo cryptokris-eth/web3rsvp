@@ -1,3 +1,4 @@
+/*
 // We require the Hardhat Runtime Environment explicitly here. This is optional
 // but useful for running the script in a standalone fashion through `node <script>`.
 //
@@ -27,3 +28,23 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
+*/
+
+const hre = require("hardhat");
+
+async function main() {
+  const rsvpContractFactory = await hre.ethers.getContractFactory("Web3RSVP");
+  const rsvpContract = await rsvpContractFactory.deploy();
+  await rsvpContract.deployed();
+  console.log("Contract deployed to:", rsvpContract.address);
+}
+
+main()
+  .then(() => {
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.log(err);
+    process.exit(1);
+  });
