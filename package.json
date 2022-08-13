@@ -25,5 +25,8 @@
     "prettier-plugin-solidity": "^1.0.0-dev.23",
     "solidity-coverage": "^0.7.21",
     "typechain": "^8.1.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1"
   }
 }
